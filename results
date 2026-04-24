@@ -1,0 +1,71 @@
+## Results
+
+The model was evaluated on a validation set (30% split).
+
+### Metrics
+
+* **Accuracy:** 0.8009
+* **Precision:** 0.7108
+* **Recall (TPR):** 0.7284
+* **False Positive Rate (FPR):** 0.1600
+* **ROC AUC:** 0.8384
+
+The model exceeds the required threshold (Validation Accuracy > 74%).
+
+---
+
+### Confusion Matrix
+
+```text
+[[126  24]
+ [ 22  59]]
+```
+
+* TN = 126 (correctly identified non-diabetic patients)
+* TP = 59  (correctly identified diabetic patients)
+* FP = 24  (false positives)
+* FN = 22  (missed diabetes cases)
+
+---
+
+### ROC Curve
+
+![ROC Curve](results/roc_curve.png)
+
+The ROC curve lies well above the random baseline, indicating good class separability.
+
+---
+
+### Interpretation
+
+The model demonstrates solid baseline performance for a simple feedforward neural network:
+
+* Accuracy (~80%) indicates reliable overall classification
+* Precision (~71%) shows that most positive predictions are correct
+* Recall (~73%) indicates that the majority of diabetes cases are detected
+* ROC AUC (~0.84) suggests good discrimination between classes
+
+However:
+
+* Some diabetes cases are still missed (FN = 22)
+* False positives are present (FPR = 0.16)
+* Slight overfitting is observed after ~200 epochs
+
+---
+
+### Conclusion
+
+The FNN model successfully predicts diabetes using clinical parameters and meets the заданā performance requirement.
+
+This project demonstrates:
+
+* proper preprocessing (handling invalid values, scaling)
+* neural network training with PyTorch
+* evaluation using multiple classification metrics
+* interpretation of model performance
+
+Further improvements could include:
+
+* hyperparameter tuning
+* regularization
+* more advanced models
