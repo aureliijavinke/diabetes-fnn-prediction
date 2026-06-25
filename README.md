@@ -107,26 +107,29 @@ The model is evaluated using:
 * ROC AUC
 
 ---
-
 ## Results
 
-(Insert your actual results here after running the model)
+The model was evaluated on a validation set using a 70/30 train-validation split.
 
-Example structure:
+### Metrics
 
-* Accuracy:
-* Precision:
-* Recall:
-* ROC AUC:
+- Accuracy: 0.8009
+- Precision: 0.7108
+- Recall / True Positive Rate: 0.7284
+- False Positive Rate: 0.1600
+- ROC AUC: 0.8384
 
-Confusion Matrix:
+### Confusion Matrix
 
-```
-[[TN FP]
- [FN TP]]
-```
+```text
+[[126  24]
+[ 22  59]]
+TN = 126: correctly identified non-diabetic patients
+TP = 59: correctly identified diabetic patients
+FP = 24: non-diabetic patients incorrectly classified as diabetic
+FN = 22: diabetic patients missed by the model
 
----
+The model exceeds the expected validation accuracy threshold of 74%.
 
 ## Interpretation
 
@@ -189,6 +192,8 @@ diabetes-fnn-prediction/
 
 ---
 
+
+```md
 ## Author
 
-Aurēlija
+Aurēlija Viņķe
